@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Love You</title>
+  <style>
+    body {
+      background: #000;
+      color: #ff3366;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #text {
+      font-size: 3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #ff3366;
+      animation: typing 3s steps(9, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 9ch; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #ff3366; }
+    }
+  </style>
+</head>
+<body>
+  <div id="text">I love you</div>
+</body>
+</html>
