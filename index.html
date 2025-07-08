@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>I Love You</title>
   <style>
     * {
@@ -13,13 +13,13 @@
 
     body {
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
       position: relative;
     }
@@ -32,19 +32,19 @@
 
     .text {
       color: white;
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-shadow: 0 0 10px #ff3e6c, 0 0 20px #ff3e6c;
       white-space: nowrap;
       overflow: hidden;
       border-right: 3px solid rgba(255,255,255,0.75);
       width: 0;
-      animation: typing 3s steps(9) 1s forwards, blink 0.75s step-end infinite;
-      z-index: 2;
+      animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
+      z-index: 1;
     }
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 9ch }
+      to { width: 10ch }
     }
 
     @keyframes blink {
@@ -57,8 +57,8 @@
       height: 15px;
       background: red;
       transform: rotate(45deg);
-      animation: float 10s linear infinite;
-      opacity: 0.7;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
     }
 
     .heart::before,
@@ -81,13 +81,13 @@
       left: -7.5px;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        bottom: -10%;
-        opacity: 0.5;
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
       }
       100% {
-        bottom: 110%;
+        transform: translateY(-120vh) rotate(45deg);
         opacity: 0;
       }
     }
@@ -101,13 +101,13 @@
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (8 + Math.random() * 5) + "s";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
       heart.style.transform = `rotate(45deg) scale(${0.5 + Math.random()})`;
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 15000);
+      setTimeout(() => heart.remove(), 10000);
     }
 
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 250);
   </script>
 </body>
 </html>
